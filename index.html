@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Momently | On-Demand Content Creators — Greenville, SC</title>
+<meta name="description" content="Momently connects you with a certified content creator in minutes. Book, capture, and share — without ever picking up a camera. Now live in Greenville, SC.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#12203f;--navy-2:#1f2d50;--cream:#faf7f1;--paper:#ffffff;--accent:#c0392b;--accent-2:#e07856;
+    --gold:#cba135;--ink:#1a1a1a;--grey:#5c6270;--line:#e7e2d8;--radius:18px;--maxw:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.serif{font-family:'Fraunces',serif;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+  section{padding:110px 0;}
+  .eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:12.5px;font-weight:700;color:var(--accent);margin-bottom:16px;display:inline-block;}
+  header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,247,241,0.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  nav{max-width:var(--maxw);margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;}
+  .logo{font-family:'Fraunces',serif;font-size:24px;font-weight:600;letter-spacing:-.01em;color:var(--navy);}
+  .logo span{color:var(--accent);}
+  .navlinks{display:flex;gap:36px;align-items:center;}
+  .navlinks a{font-size:14.5px;font-weight:600;color:var(--navy-2);opacity:.8;transition:opacity .2s;}
+  .navlinks a:hover{opacity:1;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:100px;font-weight:700;font-size:14.5px;cursor:pointer;border:none;transition:transform .15s ease, box-shadow .15s ease;white-space:nowrap;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--accent);color:#fff;box-shadow:0 8px 20px -6px rgba(192,57,43,.55);}
+  .btn-primary:hover{box-shadow:0 12px 26px -6px rgba(192,57,43,.65);}
+  .btn-outline{background:transparent;color:var(--navy);border:1.5px solid var(--navy);}
+  .btn-outline:hover{background:var(--navy);color:#fff;}
+  .btn-sm{padding:10px 20px;font-size:13.5px;}
+  .hero{padding:190px 0 120px;position:relative;overflow:hidden;
+    background:radial-gradient(60% 60% at 82% 8%, rgba(203,161,53,.16) 0%, rgba(203,161,53,0) 60%),
+      radial-gradient(50% 50% at 8% 92%, rgba(192,57,43,.10) 0%, rgba(192,57,43,0) 60%), var(--cream);}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center;}
+  .hero h1{font-size:clamp(40px,5.2vw,64px);line-height:1.04;letter-spacing:-.02em;color:var(--navy);font-weight:500;margin-bottom:26px;}
+  .hero h1 em{font-style:italic;color:var(--accent);}
+  .hero p.lead{font-size:19px;color:var(--grey);max-width:480px;margin-bottom:36px;}
+  .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:28px;}
+  .hero-note{font-size:13.5px;color:var(--grey);display:flex;align-items:center;gap:10px;}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);display:inline-block;}
+  .hero-visual{position:relative;}
+  .phone-card{background:var(--navy);border-radius:32px;padding:22px;box-shadow:0 40px 80px -30px rgba(18,32,63,.55);transform:rotate(2deg);position:relative;z-index:2;}
+  .phone-screen{background:linear-gradient(160deg,#1f2d50 0%, #12203f 60%, #0c1730 100%);border-radius:22px;padding:26px 22px;min-height:460px;color:#fff;position:relative;overflow:hidden;}
+  .phone-screen .status{display:flex;justify-content:space-between;font-size:11px;opacity:.6;margin-bottom:28px;}
+  .agent-pill{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:16px;display:flex;gap:12px;align-items:center;margin-bottom:14px;}
+  .avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--accent-2));flex:none;}
+  .agent-pill .name{font-weight:700;font-size:14px;}
+  .agent-pill .meta{font-size:12px;opacity:.65;}
+  .eta-badge{margin-left:auto;background:var(--gold);color:#12203f;font-weight:800;font-size:12px;padding:6px 10px;border-radius:8px;}
+  .map-mock{height:150px;border-radius:16px;margin:16px 0;
+    background:radial-gradient(circle at 30% 40%, rgba(203,161,53,.35), transparent 45%),
+      radial-gradient(circle at 70% 70%, rgba(192,57,43,.3), transparent 45%), #182747;position:relative;}
+  .map-mock::after{content:"";position:absolute;top:44%;left:52%;width:12px;height:12px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 8px rgba(203,161,53,.25);}
+  .cta-row{display:flex;gap:10px;}
+  .cta-row .b{flex:1;background:var(--accent);text-align:center;padding:14px;border-radius:12px;font-weight:700;font-size:13.5px;}
+  .float-card{position:absolute;background:#fff;border-radius:16px;padding:14px 18px;box-shadow:0 20px 40px -14px rgba(18,32,63,.25);z-index:3;font-size:13px;font-weight:700;display:flex;align-items:center;gap:10px;}
+  .float-card.top{top:-18px;right:-26px;}
+  .float-card.bottom{bottom:30px;left:-36px;}
+  .float-card .ic{width:30px;height:30px;border-radius:9px;background:var(--gold);}
+  .statstrip{background:var(--navy);color:#fff;padding:34px 0;}
+  .statgrid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;}
+  .statgrid div{text-align:center;flex:1;min-width:140px;}
+  .statgrid .num{font-family:'Fraunces',serif;font-size:30px;font-weight:600;color:var(--gold);}
+  .statgrid .lbl{font-size:12.5px;opacity:.75;text-transform:uppercase;letter-spacing:.08em;margin-top:4px;}
+  .sectionhead{max-width:640px;margin-bottom:56px;}
+  .sectionhead.center{margin-left:auto;margin-right:auto;text-align:center;}
+  .sectionhead h2{font-size:clamp(30px,3.6vw,44px);color:var(--navy);font-weight:500;letter-spacing:-.01em;}
+  .sectionhead p{color:var(--grey);font-size:17px;margin-top:14px;}
+  .features{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+  .fcard{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;transition:transform .2s ease, box-shadow .2s ease;}
+  .fcard:hover{transform:translateY(-4px);box-shadow:0 20px 40px -20px rgba(18,32,63,.2);}
+  .ficon{width:44px;height:44px;border-radius:12px;background:var(--navy);margin-bottom:20px;position:relative;}
+  .ficon::after{content:"";position:absolute;inset:13px;background:var(--gold);border-radius:4px;}
+  .fcard h3{font-size:18px;color:var(--navy);margin-bottom:10px;font-weight:600;}
+  .fcard p{font-size:14.5px;color:var(--grey);}
+  .how{background:var(--paper);}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
+  .step{padding:0 22px;position:relative;}
+  .step:not(:last-child)::after{content:"";position:absolute;top:26px;right:-6px;width:calc(100% - 20px);height:1px;background:repeating-linear-gradient(90deg,var(--line) 0 6px,transparent 6px 12px);}
+  .stepnum{width:52px;height:52px;border-radius:50%;background:var(--navy);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:20px;font-weight:600;margin-bottom:22px;position:relative;z-index:2;}
+  .step h3{font-size:17px;color:var(--navy);margin-bottom:8px;font-weight:600;}
+  .step p{font-size:14px;color:var(--grey);}
+  .usecases{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .ucard{border-radius:var(--radius);padding:26px;min-height:150px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;position:relative;overflow:hidden;}
+  .ucard::before{content:"";position:absolute;inset:0;opacity:.92;}
+  .ucard h4{font-family:'Fraunces',serif;font-size:20px;font-weight:600;position:relative;margin-bottom:6px;}
+  .ucard p{font-size:13px;opacity:.9;position:relative;}
+  .uc1::before{background:linear-gradient(135deg,#1f2d50,#0c1730);}
+  .uc2::before{background:linear-gradient(135deg,#c0392b,#7a2015);}
+  .uc3::before{background:linear-gradient(135deg,#cba135,#8a6a1e);}
+  .uc4::before{background:linear-gradient(135deg,#3a5a78,#1a2c3d);}
+  .uc5::before{background:linear-gradient(135deg,#6b4226,#3a2314);}
+  .uc6::before{background:linear-gradient(135deg,#2f4a3d,#16261e);}
+  .pricing{background:var(--navy);color:#fff;}
+  .pricing .sectionhead h2, .pricing .sectionhead p{color:#fff;}
+  .pricing .sectionhead p{opacity:.7;}
+  .pricecards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .pcard{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:34px 28px;display:flex;flex-direction:column;}
+  .pcard.featured{background:var(--paper);color:var(--ink);border:none;transform:translateY(-14px);box-shadow:0 30px 60px -20px rgba(0,0,0,.4);}
+  .pcard .tag{font-size:12px;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:var(--gold);margin-bottom:14px;}
+  .pcard.featured .tag{color:var(--accent);}
+  .pcard .price{font-family:'Fraunces',serif;font-size:40px;font-weight:600;margin-bottom:4px;}
+  .pcard .price span{font-size:15px;opacity:.6;font-family:'Inter',sans-serif;font-weight:500;}
+  .pcard ul{list-style:none;margin:22px 0 28px;flex:1;}
+  .pcard li{font-size:14px;padding:9px 0;border-top:1px solid rgba(255,255,255,.1);opacity:.9;}
+  .pcard.featured li{border-top:1px solid var(--line);opacity:.85;}
+  .pcard li:first-child{border-top:none;}
+  .locale{background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .locale-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .locale-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);padding:8px 16px;border-radius:100px;font-size:12.5px;font-weight:700;color:var(--navy);margin-bottom:20px;}
+  .locale-map{height:320px;border-radius:24px;position:relative;overflow:hidden;background:linear-gradient(160deg,#e9e2d2,#d8cdb2);}
+  .locale-map .pin{position:absolute;width:16px;height:16px;background:var(--accent);border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 6px 14px rgba(192,57,43,.4);}
+  .locale-map .label{position:absolute;background:#fff;padding:6px 12px;border-radius:8px;font-size:12px;font-weight:700;color:var(--navy);box-shadow:0 8px 16px rgba(0,0,0,.12);white-space:nowrap;}
+  .agentcta{background:linear-gradient(120deg, var(--navy) 0%, #0c1730 100%);border-radius:28px;padding:70px 60px;color:#fff;position:relative;overflow:hidden;}
+  .agentcta::before{content:"";position:absolute;right:-80px;top:-80px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle, rgba(203,161,53,.25), transparent 70%);}
+  .agentcta-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;}
+  .agentcta h2{font-size:clamp(28px,3.4vw,38px);margin-bottom:16px;font-weight:500;}
+  .agentcta p{opacity:.78;font-size:16px;max-width:480px;}
+  .agent-stats{display:flex;gap:30px;margin-top:26px;}
+  .agent-stats .num{font-family:'Fraunces',serif;font-size:26px;color:var(--gold);font-weight:600;}
+  .agent-stats .lbl{font-size:12.5px;opacity:.7;}
+  .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .tcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;}
+  .tcard .stars{color:var(--gold);letter-spacing:3px;margin-bottom:16px;font-size:15px;}
+  .tcard p{font-size:14.5px;color:var(--ink);opacity:.85;margin-bottom:20px;font-style:italic;}
+  .tcard .who{display:flex;align-items:center;gap:12px;}
+  .tcard .who .a{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--accent));}
+  .tcard .who .n{font-weight:700;font-size:13.5px;}
+  .tcard .who .r{font-size:12px;color:var(--grey);}
+  .waitlist{background:radial-gradient(60% 100% at 50% 0%, rgba(203,161,53,.14), transparent 60%), var(--paper);text-align:center;}
+  .waitlist h2{font-size:clamp(30px,4vw,46px);color:var(--navy);margin-bottom:16px;font-weight:500;}
+  .waitlist p{color:var(--grey);font-size:17px;max-width:520px;margin:0 auto 34px;}
+  .waitform{display:flex;gap:10px;max-width:480px;margin:0 auto;}
+  .waitform input{flex:1;padding:15px 20px;border-radius:100px;border:1.5px solid var(--line);font-size:15px;font-family:'Inter',sans-serif;background:#fff;}
+  .waitform input:focus{outline:none;border-color:var(--navy);}
+  .waitnote{font-size:12.5px;color:var(--grey);margin-top:14px;}
+  footer{background:var(--navy);color:#cfd4e0;padding:70px 0 30px;}
+  .footgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;margin-bottom:50px;}
+  footer .logo{color:#fff;margin-bottom:14px;}
+  footer .flabel{font-size:13px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;}
+  footer a{display:block;font-size:14px;padding:6px 0;opacity:.75;transition:opacity .15s;}
+  footer a:hover{opacity:1;}
+  .footbottom{border-top:1px solid rgba(255,255,255,.12);padding-top:26px;display:flex;justify-content:space-between;font-size:13px;opacity:.6;flex-wrap:wrap;gap:12px;}
+  @media (max-width:960px){
+    .hero-grid{grid-template-columns:1fr;}
+    .features{grid-template-columns:repeat(2,1fr);}
+    .steps{grid-template-columns:repeat(2,1fr);row-gap:40px;}
+    .step:nth-child(2)::after{display:none;}
+    .usecases{grid-template-columns:repeat(2,1fr);}
+    .pricecards{grid-template-columns:1fr;}
+    .pcard.featured{transform:none;}
+    .locale-grid{grid-template-columns:1fr;}
+    .agentcta-grid{grid-template-columns:1fr;}
+    .footgrid{grid-template-columns:1fr 1fr;}
+    .navlinks{display:none;}
+  }
+  @media (max-width:600px){
+    section{padding:70px 0;}
+    .hero{padding-top:150px;}
+    .features{grid-template-columns:1fr;}
+    .usecases{grid-template-columns:1fr;}
+    .waitform{flex-direction:column;}
+    .footgrid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="/" class="logo">Moment<span>ly</span></a>
+    <div class="navlinks">
+      <a href="#product">Product</a>
+      <a href="#how">How it Works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#greenville">Greenville</a>
+      <a href="#agents">Become an Agent</a>
+    </div>
+    <a href="#waitlist" class="btn btn-primary btn-sm">Join the Waitlist</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Now booking in Greenville, SC</span>
+      <h1>Put your phone down.<br><em>Someone else</em> will capture it.</h1>
+      <p class="lead">Momently matches you with a certified photographer or videographer in minutes — not hours. Get an instant preview before you've even left, and a fully edited reel before the night is over.</p>
+      <div class="hero-ctas">
+        <a href="#waitlist" class="btn btn-primary">Join the Waitlist</a>
+        <a href="#how" class="btn btn-outline">See How It Works</a>
+      </div>
+      <div class="hero-note"><span class="dot"></span> Verified, background-checked creators only — every time.</div>
+    </div>
+    <div class="hero-visual">
+      <div class="float-card top"><div class="ic"></div> AI preview ready — 2 min</div>
+      <div class="phone-card">
+        <div class="phone-screen">
+          <div class="status"><span>9:41</span><span>●●●●</span></div>
+          <div class="agent-pill">
+            <div class="avatar"></div>
+            <div>
+              <div class="name">Maya R.</div>
+              <div class="meta">4.9 ★ · Photo + Video</div>
+            </div>
+            <div class="eta-badge">6 min</div>
+          </div>
+          <div class="map-mock"></div>
+          <div class="cta-row"><div class="b">Message Maya</div></div>
+        </div>
+      </div>
+      <div class="float-card bottom"><div class="ic"></div> Split with 3 friends</div>
+    </div>
+  </div>
+</section>
+
+<div class="statstrip">
+  <div class="wrap statgrid">
+    <div><div class="num">&lt; 10 min</div><div class="lbl">Average match time</div></div>
+    <div><div class="num">2 min</div><div class="lbl">AI instant preview</div></div>
+    <div><div class="num">100%</div><div class="lbl">ID-verified creators</div></div>
+    <div><div class="num">Greenville</div><div class="lbl">First Southeast city</div></div>
+  </div>
+</div>
+
+<section id="product">
+  <div class="wrap">
+    <div class="sectionhead center">
+      <span class="eyebrow">What is Momently</span>
+      <h2>Every moment deserves a good camera. So we bring one to you.</h2>
+      <p>Momently connects everyday people with trained, certified content creators — on demand, anywhere in Greenville, for a fraction of the cost of a traditional shoot.</p>
+    </div>
+    <div class="features">
+      <div class="fcard"><div class="ficon"></div><h3>On-Demand</h3><p>Book now or schedule ahead. Most requests are matched with a nearby creator in under 10 minutes.</p></div>
+      <div class="fcard"><div class="ficon"></div><h3>Instant AI Preview</h3><p>Get a rough cut within minutes of your shoot ending — post it before you're even home, no waiting hours for an edit.</p></div>
+      <div class="fcard"><div class="ficon"></div><h3>Real Editors, Real Fast</h3><p>Your fully polished photos and reel — styled to your preferences — arrive within a few hours, not weeks.</p></div>
+      <div class="fcard"><div class="ficon"></div><h3>Verified & Safe</h3><p>Every creator passes an ID check, background check, and skills review. Every shoot starts with a safety code.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="sectionhead center"><span class="eyebrow">How it works</span><h2>Four taps between you and a memory worth keeping</h2></div>
+    <div class="steps">
+      <div class="step"><div class="stepnum">1</div><h3>Tap to book</h3><p>Pick a duration and package — photo, video, or both. Pricing is shown up front, no quotes.</p></div>
+      <div class="step"><div class="stepnum">2</div><h3>Get matched</h3><p>See your nearest available creator, their rating, and live ETA. Chat directly in the app.</p></div>
+      <div class="step"><div class="stepnum">3</div><h3>Capture the moment</h3><p>Verify with your safety code, then just live in it — your creator handles the rest.</p></div>
+      <div class="step"><div class="stepnum">4</div><h3>Share it, fast</h3><p>An AI preview lands in minutes. Your fully edited content follows within hours.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sectionhead center"><span class="eyebrow">Built for real life</span><h2>Whatever the moment, there's a creator for it</h2></div>
+    <div class="usecases">
+      <div class="ucard uc1"><h4>Nights Out</h4><p>Downtown Main Street, birthdays, girls' nights</p></div>
+      <div class="ucard uc2"><h4>Life Milestones</h4><p>Engagements, showers, graduations</p></div>
+      <div class="ucard uc3"><h4>Family Moments</h4><p>Newborns, first birthdays, reunions</p></div>
+      <div class="ucard uc4"><h4>Small Business</h4><p>Restaurants, boutiques, hotels needing fresh content</p></div>
+      <div class="ucard uc5"><h4>Outdoors & Lifestyle</h4><p>Swamp Rabbit Trail, hikes, farmers markets</p></div>
+      <div class="ucard uc6"><h4>Festivals & Events</h4><p>Fall for Greenville, Artisphere, Euphoria</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="sectionhead center"><span class="eyebrow">Simple pricing</span><h2>No quotes. No haggling. Just a price, up front.</h2><p>Launch pricing for Greenville — lower than the national average, on purpose.</p></div>
+    <div class="pricecards">
+      <div class="pcard"><div class="tag">Single Session</div><div class="price">$45<span>/30 min</span></div>
+        <ul><li>Instant AI preview included</li><li>Photo, video, or both</li><li>+$20 for full human-edited delivery</li><li>Pay as you go</li></ul>
+        <a href="#waitlist" class="btn btn-outline">Join Waitlist</a></div>
+      <div class="pcard featured"><div class="tag">Momently+</div><div class="price">$69<span>/month</span></div>
+        <ul><li>2 sessions included monthly</li><li>Priority matching on weekend nights</li><li>Rebook your favorite creator, 1 tap</li><li>20% off additional sessions</li></ul>
+        <a href="#waitlist" class="btn btn-primary">Join Waitlist</a></div>
+      <div class="pcard"><div class="tag">Business</div><div class="price">$249<span>/month</span></div>
+        <ul><li>4 sessions/month for your business</li><li>Shared brand style guide</li><li>Multi-user billing & scheduling</li><li>Dedicated account support</li></ul>
+        <a href="#waitlist" class="btn btn-outline">Get in Touch</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="locale" id="greenville">
+  <div class="wrap locale-grid">
+    <div>
+      <div class="locale-badge">📍 Flagship City</div>
+      <h2 style="font-size:34px;color:var(--navy);font-weight:500;margin-bottom:18px;">Proudly starting in Greenville</h2>
+      <p style="color:var(--grey);font-size:16px;margin-bottom:20px;">Greenville's downtown, festival calendar, and college creator community made it the obvious place to start — not another crowded coastal market. We're building here first, before anywhere else on the East Coast.</p>
+      <p style="color:var(--grey);font-size:16px;">Coming next: Charlotte, Charleston, and Asheville.</p>
+    </div>
+    <div class="locale-map">
+      <div class="pin" style="top:38%;left:44%;"></div><div class="label" style="top:30%;left:36%;">Downtown Main St</div>
+      <div class="pin" style="top:60%;left:65%;"></div><div class="label" style="top:65%;left:56%;">West End</div>
+      <div class="pin" style="top:25%;left:70%;"></div><div class="label" style="top:16%;left:60%;">North Main</div>
+    </div>
+  </div>
+</section>
+
+<section id="agents">
+  <div class="wrap">
+    <div class="agentcta">
+      <div class="agentcta-grid">
+        <div>
+          <span class="eyebrow" style="color:var(--gold);">Become a Momently Agent</span>
+          <h2>Turn your camera into a paycheck.</h2>
+          <p>Set your own hours, get matched with nearby requests, and get paid out the same day. No portfolio-building for free — every Mission pays.</p>
+          <div class="agent-stats">
+            <div><div class="num">Same-day</div><div class="lbl">Payouts</div></div>
+            <div><div class="num">You choose</div><div class="lbl">Your schedule</div></div>
+            <div><div class="num">72%</div><div class="lbl">Avg. take-home rate</div></div>
+          </div>
+        </div>
+        <div style="text-align:center;"><a href="#waitlist" class="btn btn-primary" style="width:100%;">Apply to Become an Agent</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sectionhead center"><span class="eyebrow">What people are saying</span><h2>Built around real moments, from real people</h2></div>
+    <div class="testimonials">
+      <div class="tcard"><div class="stars">★★★★★</div><p>"I didn't miss a single second of my sister's bridal shower and somehow still ended up with the best photos of the whole weekend."</p><div class="who"><div class="a"></div><div><div class="n">Jordan T.</div><div class="r">Greenville, SC</div></div></div></div>
+      <div class="tcard"><div class="stars">★★★★★</div><p>"The instant preview was posted before we even left downtown. My friends thought I hired a whole production team."</p><div class="who"><div class="a"></div><div><div class="n">Alexis M.</div><div class="r">Greenville, SC</div></div></div></div>
+      <div class="tcard"><div class="stars">★★★★★</div><p>"As a creator, I book my own hours around class and still walk away with same-day pay. It's the easiest side income I've had."</p><div class="who"><div class="a"></div><div><div class="n">Devon P.</div><div class="r">Momently Agent</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="waitlist" id="waitlist">
+  <div class="wrap">
+    <span class="eyebrow">Launching soon</span>
+    <h2>Be first in Greenville.</h2>
+    <p>Join the waitlist for early access, founding-member pricing, and first pick of launch-week booking slots.</p>
+    <form id="waitform" class="waitform">
+      <input type="email" name="email" placeholder="you@email.com" required>
+      <button type="submit" class="btn btn-primary">Join Waitlist</button>
+    </form>
+    <div id="waitnote" class="waitnote"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footgrid">
+      <div>
+        <div class="logo">Moment<span style="color:var(--gold);">ly</span></div>
+        <p style="font-size:14px;opacity:.7;max-width:280px;">On-demand content creators for everyday life. Headquartered in Greenville, SC.</p>
+      </div>
+      <div><div class="flabel">Product</div><a href="#product">Features</a><a href="#how">How it Works</a><a href="#pricing">Pricing</a></div>
+      <div><div class="flabel">Company</div><a href="#greenville">Greenville</a><a href="#agents">Become an Agent</a><a href="#waitlist">Join Waitlist</a></div>
+      <div><div class="flabel">Legal</div><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a><a href="/support.html">Support</a></div>
+    </div>
+    <div class="footbottom">
+      <span>© 2026 Momently, Inc. All rights reserved.</span>
+      <span>Headquartered in Greenville, South Carolina</span>
+    </div>
+  </div>
+</footer>
+
+<script type="module">
+  // Optional analytics — only loads if VITE_ANALYTICS_ID is set in .env
+  const gaId = import.meta.env.VITE_ANALYTICS_ID;
+  if (gaId) {
+    const s = document.createElement('script');
+    s.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+    s.async = true;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ window.dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', gaId);
+  }
+
+  // Waitlist form — posts to VITE_WAITLIST_ENDPOINT (e.g. a Formspree endpoint).
+  const endpoint = import.meta.env.VITE_WAITLIST_ENDPOINT;
+  const form = document.getElementById('waitform');
+  const note = document.getElementById('waitnote');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const button = form.querySelector('button');
+    const email = form.querySelector('input[name="email"]').value;
+    if (!endpoint || endpoint.includes('your_form_id')) {
+      note.textContent = 'Waitlist form is not connected yet — set VITE_WAITLIST_ENDPOINT in .env (see README).';
+      console.warn('VITE_WAITLIST_ENDPOINT is not configured. See .env.example.');
+      return;
+    }
+    button.textContent = 'Joining…';
+    try {
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      if (res.ok) {
+        button.textContent = "You're on the list ✓";
+        form.reset();
+      } else {
+        button.textContent = 'Join Waitlist';
+        note.textContent = 'Something went wrong — please try again.';
+      }
+    } catch (err) {
+      button.textContent = 'Join Waitlist';
+      note.textContent = 'Something went wrong — please try again.';
+    }
+  });
+</script>
+
+</body>
+</html>
